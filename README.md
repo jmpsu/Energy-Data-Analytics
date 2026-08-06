@@ -35,6 +35,4 @@ This script is instrumental for:
 * **Load Research:** Analyzing peak demand patterns for grid stability planning.
 
 ---
-**Author:** Joseph Metz  
-**Role:** Principal IT Business Systems Analyst  
 **Environment:** Amazon Redshift / PostgreSQL
