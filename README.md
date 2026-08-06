@@ -1,7 +1,7 @@
-# Energy Sector Data Analytics: Customer Time Series Multi-Factor Regression
+## # Energy Sector Data Analytics: Customer Time Series Multi-Factor Regression
 
 ## Overview
-This repository showcases a production-grade SQL analytics engine designed for **FPL Northwest Florida**. The primary script, `FPLNW_TOU_EXTRACT.sql`, performs advanced reconciliation between legacy CIS (Customer Information System) billing documents and high-frequency AMI (Advanced Metering Infrastructure) interval data.
+This repository showcases a production-grade SQL analytics engine designed for **Regional Utility – Northwest Division**. The primary script, `REGIONAL_NW_TOU_EXTRACT.sql`, performs advanced reconciliation between legacy CIS (Customer Information System) billing documents and high-frequency AMI (Advanced Metering Infrastructure) interval data.
 
 This project demonstrates the ability to handle massive utility datasets within a **Cloud Data Warehouse (Amazon Redshift)** environment, ensuring billing accuracy for Time-of-Use (TOU) customers.
 
@@ -9,12 +9,14 @@ This project demonstrates the ability to handle massive utility datasets within 
 
 ### 1. Complex CIS Integration (SAP/IS-U)
 The script integrates several core SAP/IS-U billing and installation tables, implementing rigorous normalization and performance filters:
+
 * **ERCH / ERCHC:** Extracts billing document headers and ensures only non-reversed, fully invoiced documents are processed.
 * **EVER / EANL / EANLH:** Navigates the complex relationship between Contracts, Installations, and Rate Categories (Tariftyp) to ensure data temporal integrity.
 * **ETTIFN:** Aggregates granular billing operands like `HISTKWH` and `MAXKW`.
 
 ### 2. Custom TOU & SDTR Calendar Logic
 A significant portion of the logic is dedicated to a dynamic Time-of-Use calendar that distinguishes between:
+
 * **Seasonal Windows:** Automated switching between Winter (Nov-Mar) and Summer (Apr-Oct) peak windows.
 * **Peak/Off-Peak Definitions:** Precise hour-of-day filtering (e.g., 6 AM–9 AM and 6 PM–9 PM for Winter On-Peak).
 * **SDTR Support:** Specialized logic for Seasonal Demand Time-of-Use Rider (SDTR) windows (3 PM–5 PM, June-Sept).
@@ -30,9 +32,11 @@ A significant portion of the logic is dedicated to a dynamic Time-of-Use calenda
 
 ## Use Case: Business Intelligence
 This script is instrumental for:
+
 * **Rate Impact Analysis:** Determining how customer bills would change under different TOU structures.
 * **Revenue Protection:** Identifying discrepancies between meter reads and billed amounts.
 * **Load Research:** Analyzing peak demand patterns for grid stability planning.
 
 ---
+
 **Environment:** Amazon Redshift / PostgreSQL
