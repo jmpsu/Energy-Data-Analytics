@@ -1,4 +1,4 @@
-# NextEra Energy Utility Data Analytics: Time-of-Use (TOU) Extraction
+# Energy Sector Data Analytics: Customer Time Series Multi-Factor Regression
 
 ## Overview
 This repository showcases a production-grade SQL analytics engine designed for **FPL Northwest Florida**. The primary script, `FPLNW_TOU_EXTRACT.sql`, performs advanced reconciliation between legacy CIS (Customer Information System) billing documents and high-frequency AMI (Advanced Metering Infrastructure) interval data.
