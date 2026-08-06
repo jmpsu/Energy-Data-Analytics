@@ -7,7 +7,7 @@ This project demonstrates the ability to handle massive utility datasets within 
 
 ## Key Technical Features
 
-### 1. Complex CIS Integration (SAP/IS-U)
+### 1. Complex Legacy Billing System Integration (SAP/IS-U)
 The script integrates several core SAP/IS-U billing and installation tables, implementing rigorous normalization and performance filters:
 
 * **ERCH / ERCHC:** Extracts billing document headers and ensures only non-reversed, fully invoiced documents are processed.
