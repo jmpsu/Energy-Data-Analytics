@@ -1,0 +1,23 @@
+attribute,synthetic,benchmark,tolerance_pts,pass,base,source
+Clothes washer in home,88.2,88.2,1.5,True,residential premises,EIA RECS 2020 FL (CWASHER)
+Private pool,18.81,18.8,1.5,True,residential premises,EIA RECS 2020 FL (SWIMPOOL)
+Variable-speed pump | pool,50.0,50.0,5.0,True,homes with pool,RECS 2020 FL POOLPUMP/SWIMPOOL
+EV owned,3.99,4.0,0.4,True,residential premises,AFDC 2024 FL registrations / ACS households
+Level-2 charger | EV,55.2,55.0,6.0,True,EV homes,RECS 2020 EVCHRGTYPE
+Rooftop PV,2.0,2.0,0.2,True,residential premises,FPSC net-metering 2024 (FPL share)
+Any backup generator,23.98,22.1,2.0,True,residential premises,RECS 2020 FL (BACKUP)
+Home standby generator | SFD owner,6.53,6.5,1.0,True,SFD owner-occupied,Generac investor disclosures (US 6.5%)
+Battery storage | PV,10.98,12.0,2.0,True,PV homes,LBNL Tracking the Sun 2024 (FL)
+Electric water heating,91.84,87.9,3.0,False,residential premises,RECS 2020 FL (FUELH2O)
+Central AC incl. heat pumps (ducted),90.97,90.2,6.0,True,residential premises,RECS 2020 FL (ACEQUIPM_PUB=1)
+Smart thermostat,12.29,12.3,1.5,True,residential premises,RECS 2020 FL (TYPETHERM=3)
+Programmable thermostat,44.95,49.3,5.0,True,residential premises,RECS 2020 FL (TYPETHERM=2)
+Medical device at home,13.8,13.8,1.5,True,residential premises,RECS 2020 FL (MEDICALDEV)
+Life-support / electricity-dependent DME,2.17,2.17,0.3,True,residential premises,HHS emPOWER 2026-03 FL
+Work-from-home | year-round working-age,20.97,21.0,3.0,True,year-round non-retiree homes,ACS 2024 B08301 (15.7% of workers)
+Seasonal (snowbird+summer) occupancy,9.52,9.5,1.0,True,residential premises,ACS 2024 B25004 seasonal units (design)
+Electric clothes dryer,84.5,85.1,3.0,True,residential premises,RECS 2020 FL (DRYRFUEL=5)
+Commercial accounts with natural-gas service,6.0,6.02,1.0,True,commercial accounts,EIA NGA 2024 FL commercial gas consumers / EIA-861 FL commercial customers
+Commercial sites with EV charging,3124.0,3100.0,310.0,True,sites,"AFDC 2026-09: 4,352 FL public locations x ~50% FPL + workplace/fleet"
+DCFC share of commercial EV ports,31.43,33.07,12.0,True,EV ports,"AFDC 2026-09 FL: 5,063 DCFC of 15,309 public ports"
+LED share of area/street fixtures (fixture-weighted),67.4,88.89,10.0,False,street/area fixtures,FPL MFR E-13d 2026: LT-1 9.6M vs SL-1 1.2M fixture-months

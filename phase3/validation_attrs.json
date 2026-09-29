@@ -1,0 +1,1300 @@
+{
+ "n": 6000000,
+ "coverage": {
+  "A_CLOTHES_WASHER": 0,
+  "A_DRYER_FUEL": 0,
+  "A_POOL_PUMP": 0,
+  "A_EV_COUNT": 0,
+  "A_EV_CHARGER_LEVEL": 0,
+  "A_EV_CHARGING_WINDOW": 0,
+  "A_PV_KW": 0,
+  "A_BACKUP_POWER": 0,
+  "A_WATER_HEATER": 0,
+  "A_HVAC_SYSTEM": 0,
+  "A_HVAC_SEER": 0,
+  "A_HVAC_AGE_BAND": 0,
+  "A_THERMOSTAT": 0,
+  "A_OCCUPANCY_PATTERN": 0,
+  "A_MEDICAL_EQUIPMENT": 0,
+  "A_OPER_HOURS_WK": 0,
+  "A_OPER_HOURS_CLASS": 0,
+  "A_REFRIG_SHARE_PCT": 0,
+  "A_BAS_PRESENT": 0,
+  "A_DEMAND_FLEX_KW": 0,
+  "A_BACKUP_GENERATION": 0,
+  "A_BACKUP_GEN_KW": 0,
+  "A_EV_PORTS_L2": 0,
+  "A_EV_PORTS_DCFC": 0,
+  "A_OCCUPANCY_SEASONALITY": 0,
+  "A_ELECTRIFICATION_READINESS": 0,
+  "A_ELECTRIFICATION_MWH_POTENTIAL": 0,
+  "A_TENANCY": 0,
+  "A_OPERATING_SCHEDULE": 0,
+  "A_PROCESS_CONTINUITY": 0,
+  "A_LOAD_CONTROL_PROGRAM": 0,
+  "A_CURTAILABLE_KW": 0,
+  "A_PQ_SENSITIVITY": 0,
+  "A_ONSITE_GENERATION": 0,
+  "A_ONSITE_GEN_KW": 0,
+  "A_MOTOR_PUMP_SHARE_PCT": 0,
+  "A_PROCESS_HEAT_FUEL": 0,
+  "A_ELECTRIFICATION_MWH_POTENTIAL_IND": 0,
+  "A_IRRIGATION_PUMPING": 0,
+  "A_COLD_STORAGE": 0,
+  "A_EXPANSION_LIKELIHOOD": 0,
+  "A_EXPANSION_SCORE": 0,
+  "A_FIXTURE_TECH": 0,
+  "A_CONTROL_TYPE": 0,
+  "A_OWNERSHIP": 0,
+  "A_LED_CONVERSION_KWH_YR": 0
+ },
+ "impossible": {
+  "private pool in 2+ unit apartment": 0,
+  "rooftop PV on renter or apartment": 0,
+  "EV charger/window without EV (or EV without)": 0,
+  "RS-1EV service without an EV": 0,
+  "RS-1EV not on overnight-scheduled charging": 0,
+  "battery storage without PV": 0,
+  "standby generator on apartment/renter": 0,
+  "thermostat on room-AC / no-AC home": 0,
+  "HVAC older than the house": 0,
+  "NO_AC with SEER>0 or age band": 0,
+  "occupancy pattern vs seasonal flag": 0,
+  "retiree pattern under 65": 0,
+  "dryer present but washer absent share > 10%": 0,
+  "seasonal home not owner-occupied (>6%)": 0,
+  "hospital / nursing home without backup generation": 0,
+  "generator kW without generator (or reverse)": 0,
+  "EV ports on unmetered/sign accounts": 0,
+  "BAS in zero-floor-area account": 0,
+  "school not on school calendar": 0,
+  "CILC tariff without CILC load-control program": 0,
+  "standby-service (SST) customer without on-site generation": 0,
+  "irrigation pumping on a manufacturer": 0,
+  "agriculture with natural-gas process heat": 0,
+  "manufacturer on seasonal-ag schedule": 0,
+  "traffic signal not 24x7": 0,
+  "HPS fixture with smart dimming node": 0,
+  "LED conversion savings on an LED fixture": 0
+ },
+ "benchmarks": [
+  {
+   "attribute": "Clothes washer in home",
+   "synthetic": 88.2,
+   "benchmark": 88.2,
+   "tolerance_pts": 1.5,
+   "pass": true,
+   "base": "residential premises",
+   "source": "EIA RECS 2020 FL (CWASHER)"
+  },
+  {
+   "attribute": "Private pool",
+   "synthetic": 18.81,
+   "benchmark": 18.8,
+   "tolerance_pts": 1.5,
+   "pass": true,
+   "base": "residential premises",
+   "source": "EIA RECS 2020 FL (SWIMPOOL)"
+  },
+  {
+   "attribute": "Variable-speed pump | pool",
+   "synthetic": 50.0,
+   "benchmark": 50.0,
+   "tolerance_pts": 5.0,
+   "pass": true,
+   "base": "homes with pool",
+   "source": "RECS 2020 FL POOLPUMP/SWIMPOOL"
+  },
+  {
+   "attribute": "EV owned",
+   "synthetic": 3.99,
+   "benchmark": 4.0,
+   "tolerance_pts": 0.4,
+   "pass": true,
+   "base": "residential premises",
+   "source": "AFDC 2024 FL registrations / ACS households"
+  },
+  {
+   "attribute": "Level-2 charger | EV",
+   "synthetic": 55.2,
+   "benchmark": 55.0,
+   "tolerance_pts": 6.0,
+   "pass": true,
+   "base": "EV homes",
+   "source": "RECS 2020 EVCHRGTYPE"
+  },
+  {
+   "attribute": "Rooftop PV",
+   "synthetic": 2.0,
+   "benchmark": 2.0,
+   "tolerance_pts": 0.2,
+   "pass": true,
+   "base": "residential premises",
+   "source": "FPSC net-metering 2024 (FPL share)"
+  },
+  {
+   "attribute": "Any backup generator",
+   "synthetic": 23.98,
+   "benchmark": 22.1,
+   "tolerance_pts": 2.0,
+   "pass": true,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (BACKUP)"
+  },
+  {
+   "attribute": "Home standby generator | SFD owner",
+   "synthetic": 6.53,
+   "benchmark": 6.5,
+   "tolerance_pts": 1.0,
+   "pass": true,
+   "base": "SFD owner-occupied",
+   "source": "Generac investor disclosures (US 6.5%)"
+  },
+  {
+   "attribute": "Battery storage | PV",
+   "synthetic": 10.98,
+   "benchmark": 12.0,
+   "tolerance_pts": 2.0,
+   "pass": true,
+   "base": "PV homes",
+   "source": "LBNL Tracking the Sun 2024 (FL)"
+  },
+  {
+   "attribute": "Electric water heating",
+   "synthetic": 91.84,
+   "benchmark": 87.9,
+   "tolerance_pts": 3.0,
+   "pass": false,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (FUELH2O)"
+  },
+  {
+   "attribute": "Central AC incl. heat pumps (ducted)",
+   "synthetic": 90.97,
+   "benchmark": 90.2,
+   "tolerance_pts": 6.0,
+   "pass": true,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (ACEQUIPM_PUB=1)"
+  },
+  {
+   "attribute": "Smart thermostat",
+   "synthetic": 12.29,
+   "benchmark": 12.3,
+   "tolerance_pts": 1.5,
+   "pass": true,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (TYPETHERM=3)"
+  },
+  {
+   "attribute": "Programmable thermostat",
+   "synthetic": 44.95,
+   "benchmark": 49.3,
+   "tolerance_pts": 5.0,
+   "pass": true,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (TYPETHERM=2)"
+  },
+  {
+   "attribute": "Medical device at home",
+   "synthetic": 13.8,
+   "benchmark": 13.8,
+   "tolerance_pts": 1.5,
+   "pass": true,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (MEDICALDEV)"
+  },
+  {
+   "attribute": "Life-support / electricity-dependent DME",
+   "synthetic": 2.17,
+   "benchmark": 2.17,
+   "tolerance_pts": 0.3,
+   "pass": true,
+   "base": "residential premises",
+   "source": "HHS emPOWER 2026-03 FL"
+  },
+  {
+   "attribute": "Work-from-home | year-round working-age",
+   "synthetic": 20.97,
+   "benchmark": 21.0,
+   "tolerance_pts": 3.0,
+   "pass": true,
+   "base": "year-round non-retiree homes",
+   "source": "ACS 2024 B08301 (15.7% of workers)"
+  },
+  {
+   "attribute": "Seasonal (snowbird+summer) occupancy",
+   "synthetic": 9.52,
+   "benchmark": 9.5,
+   "tolerance_pts": 1.0,
+   "pass": true,
+   "base": "residential premises",
+   "source": "ACS 2024 B25004 seasonal units (design)"
+  },
+  {
+   "attribute": "Electric clothes dryer",
+   "synthetic": 84.5,
+   "benchmark": 85.1,
+   "tolerance_pts": 3.0,
+   "pass": true,
+   "base": "residential premises",
+   "source": "RECS 2020 FL (DRYRFUEL=5)"
+  },
+  {
+   "attribute": "Commercial accounts with natural-gas service",
+   "synthetic": 6.0,
+   "benchmark": 6.02,
+   "tolerance_pts": 1.0,
+   "pass": true,
+   "base": "commercial accounts",
+   "source": "EIA NGA 2024 FL commercial gas consumers / EIA-861 FL commercial customers"
+  },
+  {
+   "attribute": "Commercial sites with EV charging",
+   "synthetic": 3124,
+   "benchmark": 3100,
+   "tolerance_pts": 310,
+   "pass": true,
+   "base": "sites",
+   "source": "AFDC 2026-09: 4,352 FL public locations x ~50% FPL + workplace/fleet"
+  },
+  {
+   "attribute": "DCFC share of commercial EV ports",
+   "synthetic": 31.43,
+   "benchmark": 33.07,
+   "tolerance_pts": 12.0,
+   "pass": true,
+   "base": "EV ports",
+   "source": "AFDC 2026-09 FL: 5,063 DCFC of 15,309 public ports"
+  },
+  {
+   "attribute": "LED share of area/street fixtures (fixture-weighted)",
+   "synthetic": 67.4,
+   "benchmark": 88.89,
+   "tolerance_pts": 10.0,
+   "pass": false,
+   "base": "street/area fixtures",
+   "source": "FPL MFR E-13d 2026: LT-1 9.6M vs SL-1 1.2M fixture-months"
+  }
+ ],
+ "segments": [
+  {
+   "attribute": "washer",
+   "segment": "typ=MF24",
+   "synthetic": 69.7,
+   "recs_fl": 54.4,
+   "pass": false,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "typ=MF5",
+   "synthetic": 72.9,
+   "recs_fl": 69.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "typ=MOBILE",
+   "synthetic": 93.8,
+   "recs_fl": 94.2,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "typ=SFA",
+   "synthetic": 93.6,
+   "recs_fl": 88.2,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "typ=SFD",
+   "synthetic": 97.7,
+   "recs_fl": 98.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "own=True",
+   "synthetic": 94.4,
+   "recs_fl": 95.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "own=False",
+   "synthetic": 73.0,
+   "recs_fl": 72.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "inc=100-150k",
+   "synthetic": 93.7,
+   "recs_fl": 98.6,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "inc=150k+",
+   "synthetic": 96.1,
+   "recs_fl": 100.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "inc=25-50k",
+   "synthetic": 83.8,
+   "recs_fl": 83.1,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "inc=50-75k",
+   "synthetic": 88.6,
+   "recs_fl": 91.4,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "inc=75-100k",
+   "synthetic": 91.3,
+   "recs_fl": 95.2,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "washer",
+   "segment": "inc=<25k",
+   "synthetic": 71.9,
+   "recs_fl": 72.2,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "typ=MF24",
+   "synthetic": 0.0,
+   "recs_fl": 0.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "typ=MF5",
+   "synthetic": 0.0,
+   "recs_fl": 0.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "typ=MOBILE",
+   "synthetic": 12.2,
+   "recs_fl": 5.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "typ=SFA",
+   "synthetic": 9.1,
+   "recs_fl": 5.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "typ=SFD",
+   "synthetic": 33.9,
+   "recs_fl": 31.2,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "own=True",
+   "synthetic": 24.8,
+   "recs_fl": 25.7,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "own=False",
+   "synthetic": 4.1,
+   "recs_fl": 3.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "inc=100-150k",
+   "synthetic": 22.9,
+   "recs_fl": 35.3,
+   "pass": false,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "inc=150k+",
+   "synthetic": 27.3,
+   "recs_fl": 42.4,
+   "pass": false,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "inc=25-50k",
+   "synthetic": 13.6,
+   "recs_fl": 8.4,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "inc=50-75k",
+   "synthetic": 16.7,
+   "recs_fl": 16.2,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "inc=75-100k",
+   "synthetic": 19.5,
+   "recs_fl": 16.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "pool",
+   "segment": "inc=<25k",
+   "synthetic": 9.4,
+   "recs_fl": 10.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "typ=MF24",
+   "synthetic": 6.3,
+   "recs_fl": 3.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "typ=MF5",
+   "synthetic": 9.9,
+   "recs_fl": 9.1,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "typ=MOBILE",
+   "synthetic": 4.1,
+   "recs_fl": 1.6,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "typ=SFA",
+   "synthetic": 14.7,
+   "recs_fl": 12.7,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "typ=SFD",
+   "synthetic": 14.9,
+   "recs_fl": 15.7,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "own=True",
+   "synthetic": 15.2,
+   "recs_fl": 15.6,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "own=False",
+   "synthetic": 5.0,
+   "recs_fl": 4.9,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "inc=100-150k",
+   "synthetic": 15.5,
+   "recs_fl": 14.9,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "inc=150k+",
+   "synthetic": 24.0,
+   "recs_fl": 30.3,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "inc=25-50k",
+   "synthetic": 6.0,
+   "recs_fl": 6.7,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "inc=50-75k",
+   "synthetic": 9.0,
+   "recs_fl": 10.5,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "inc=75-100k",
+   "synthetic": 11.8,
+   "recs_fl": 20.0,
+   "pass": false,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "smart_tstat",
+   "segment": "inc=<25k",
+   "synthetic": 2.7,
+   "recs_fl": 2.8,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "typ=MF24",
+   "synthetic": 6.2,
+   "recs_fl": 2.9,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "typ=MF5",
+   "synthetic": 16.6,
+   "recs_fl": 6.8,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "typ=MOBILE",
+   "synthetic": 29.1,
+   "recs_fl": 23.0,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "typ=SFA",
+   "synthetic": 7.5,
+   "recs_fl": 9.5,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "typ=SFD",
+   "synthetic": 32.2,
+   "recs_fl": 31.4,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "own=True",
+   "synthetic": 28.6,
+   "recs_fl": 28.3,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "own=False",
+   "synthetic": 12.7,
+   "recs_fl": 8.5,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "inc=100-150k",
+   "synthetic": 27.0,
+   "recs_fl": 32.8,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "inc=150k+",
+   "synthetic": 33.0,
+   "recs_fl": 38.4,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "inc=25-50k",
+   "synthetic": 19.2,
+   "recs_fl": 15.6,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "inc=50-75k",
+   "synthetic": 21.8,
+   "recs_fl": 22.3,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "inc=75-100k",
+   "synthetic": 24.0,
+   "recs_fl": 19.0,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "backup_gen",
+   "segment": "inc=<25k",
+   "synthetic": 15.2,
+   "recs_fl": 14.4,
+   "pass": true,
+   "tolerance_pts": 10.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "typ=MF24",
+   "synthetic": 15.1,
+   "recs_fl": 17.8,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "typ=MF5",
+   "synthetic": 9.2,
+   "recs_fl": 6.7,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "typ=MOBILE",
+   "synthetic": 23.9,
+   "recs_fl": 19.4,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "typ=SFA",
+   "synthetic": 10.9,
+   "recs_fl": 8.8,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "typ=SFD",
+   "synthetic": 15.6,
+   "recs_fl": 16.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "own=True",
+   "synthetic": 14.6,
+   "recs_fl": 14.9,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "own=False",
+   "synthetic": 11.9,
+   "recs_fl": 11.4,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "inc=100-150k",
+   "synthetic": 14.4,
+   "recs_fl": 25.3,
+   "pass": false,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "inc=150k+",
+   "synthetic": 14.9,
+   "recs_fl": 15.8,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "inc=25-50k",
+   "synthetic": 13.2,
+   "recs_fl": 12.8,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "inc=50-75k",
+   "synthetic": 13.7,
+   "recs_fl": 8.7,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "inc=75-100k",
+   "synthetic": 14.0,
+   "recs_fl": 15.8,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "medical",
+   "segment": "inc=<25k",
+   "synthetic": 12.1,
+   "recs_fl": 11.0,
+   "pass": true,
+   "tolerance_pts": 8.0
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=2.0",
+   "synthetic": 45.0,
+   "recs_fl": 45.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=2.0",
+   "synthetic": 2.9,
+   "recs_fl": 2.91,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=2.0",
+   "synthetic": 70.9,
+   "recs_fl": 71.56,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=5.0",
+   "synthetic": 50.0,
+   "recs_fl": 50.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=5.0",
+   "synthetic": 5.3,
+   "recs_fl": 3.77,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=5.0",
+   "synthetic": 63.7,
+   "recs_fl": 63.94,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=6.0",
+   "synthetic": 114.0,
+   "recs_fl": 112.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=6.0",
+   "synthetic": 53.6,
+   "recs_fl": 55.23,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=6.0",
+   "synthetic": 75.3,
+   "recs_fl": 76.2,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=8.0",
+   "synthetic": 45.0,
+   "recs_fl": 45.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=8.0",
+   "synthetic": 2.6,
+   "recs_fl": 2.55,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=8.0",
+   "synthetic": 60.0,
+   "recs_fl": 60.05,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=14.0",
+   "synthetic": 50.0,
+   "recs_fl": 50.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=14.0",
+   "synthetic": 4.3,
+   "recs_fl": 4.23,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=14.0",
+   "synthetic": 96.1,
+   "recs_fl": 96.42,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=15.0",
+   "synthetic": 75.0,
+   "recs_fl": 75.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=15.0",
+   "synthetic": 24.1,
+   "recs_fl": 24.05,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=15.0",
+   "synthetic": 60.9,
+   "recs_fl": 63.16,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=16.0",
+   "synthetic": 168.0,
+   "recs_fl": 168.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=16.0",
+   "synthetic": 3.7,
+   "recs_fl": 3.83,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=16.0",
+   "synthetic": 97.2,
+   "recs_fl": 84.46,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=18.0",
+   "synthetic": 168.0,
+   "recs_fl": 168.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=18.0",
+   "synthetic": 10.3,
+   "recs_fl": 10.2,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=18.0",
+   "synthetic": 75.3,
+   "recs_fl": 75.56,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=23.0",
+   "synthetic": 55.0,
+   "recs_fl": 55.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=23.0",
+   "synthetic": 13.4,
+   "recs_fl": 13.33,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=23.0",
+   "synthetic": 28.1,
+   "recs_fl": 27.69,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "weekly_hours_median",
+   "segment": "PBA=25.0",
+   "synthetic": 55.0,
+   "recs_fl": 55.0,
+   "pass": true,
+   "tolerance_pts": 8,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "refrigeration_share_mean",
+   "segment": "PBA=25.0",
+   "synthetic": 7.0,
+   "recs_fl": 7.01,
+   "pass": true,
+   "tolerance_pts": 3,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "owner_occupied_pct",
+   "segment": "PBA=25.0",
+   "synthetic": 55.4,
+   "recs_fl": 57.33,
+   "pass": true,
+   "tolerance_pts": 15,
+   "source": "CBECS 2018 South (chain leasing adj.)"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=2",
+   "synthetic": 8.9,
+   "recs_fl": 9.4,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=3",
+   "synthetic": 15.0,
+   "recs_fl": 15.7,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=4",
+   "synthetic": 21.6,
+   "recs_fl": 21.0,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=5",
+   "synthetic": 34.9,
+   "recs_fl": 29.7,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=6",
+   "synthetic": 57.7,
+   "recs_fl": 49.8,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=7",
+   "synthetic": 70.3,
+   "recs_fl": 60.8,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=8",
+   "synthetic": 76.0,
+   "recs_fl": 69.8,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "BAS_pct_by_size",
+   "segment": "SQFTC=9",
+   "synthetic": 81.9,
+   "recs_fl": 73.9,
+   "pass": true,
+   "tolerance_pts": 10,
+   "source": "CBECS 2018 South"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=311",
+   "synthetic": 41.4,
+   "recs_fl": 41.4,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=312",
+   "synthetic": 49.1,
+   "recs_fl": 49.0,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=314",
+   "synthetic": 60.3,
+   "recs_fl": 60.0,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=321",
+   "synthetic": 74.2,
+   "recs_fl": 74.6,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=323",
+   "synthetic": 56.1,
+   "recs_fl": 55.9,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=325",
+   "synthetic": 57.2,
+   "recs_fl": 56.9,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=326",
+   "synthetic": 50.9,
+   "recs_fl": 51.2,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=327",
+   "synthetic": 54.9,
+   "recs_fl": 55.0,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=332",
+   "synthetic": 40.9,
+   "recs_fl": 41.1,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=333",
+   "synthetic": 51.4,
+   "recs_fl": 51.2,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=334",
+   "synthetic": 18.5,
+   "recs_fl": 18.4,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=335",
+   "synthetic": 33.8,
+   "recs_fl": 34.2,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=336",
+   "synthetic": 43.5,
+   "recs_fl": 43.6,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=337",
+   "synthetic": 50.0,
+   "recs_fl": 50.0,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  },
+  {
+   "attribute": "motor_share_mean",
+   "segment": "NAICS=339",
+   "synthetic": 33.3,
+   "recs_fl": 33.3,
+   "pass": true,
+   "tolerance_pts": 5,
+   "source": "MECS 2018 Table 5.2"
+  }
+ ],
+ "not_applicable_inside_own_class": {},
+ "income_decile_spearman": {
+  "washer": 0.818,
+  "pool": 0.806,
+  "ev": 1.0,
+  "pv": 0.842,
+  "standby_gen": 0.976,
+  "smart_tstat": 0.997
+ },
+ "class_counts": {
+  "Commercial": 640989,
+  "Industrial": 15251,
+  "Lighting": 25858,
+  "Residential": 5317902
+ },
+ "summary": {
+  "coverage_nulls_total": 0,
+  "impossible_total": 0,
+  "benchmarks_pass": "20/22",
+  "segments_pass": "113/118"
+ }
+}
