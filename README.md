@@ -9,7 +9,7 @@ Every figure in this repository is synthetic demonstration data. It is not a rea
 - `phase3/` — attribute definitions, public-benchmark checks, and the EDM verification
 - `reports/` — rate-fit one-pagers for the synthetic population
 - `report_design/` — the report layout
-- `media/energy.mp4` — a short clip of what the system is
+- `media/energy.mp4` — a one-minute walkthrough of the phase-2 rate-fit screen
 
 An earlier note on this repository described a Northwest extract, `REGIONAL_NW_TOU_EXTRACT.sql`. That script is not in this tree.
 
