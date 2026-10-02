@@ -10,6 +10,7 @@ Every figure in this repository is synthetic demonstration data. It is not a rea
 - `reports/` — rate-fit one-pagers for the synthetic population
 - `report_design/` — the report layout
 - `media/energy.mp4` — a one-minute walkthrough of the phase-2 rate-fit screen
+- `media/energy_data_analytics_v5_web.mp4` — a twelve-minute narrated overview of the platform: the AWS pipeline, the attribute and segment data, the two dashboards, and the Neo4j graph
 
 An earlier note on this repository described a Northwest extract, `REGIONAL_NW_TOU_EXTRACT.sql`. That script is not in this tree.
 
